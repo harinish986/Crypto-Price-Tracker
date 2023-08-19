@@ -59,7 +59,7 @@ npm start
 ```
 
 This will launch the app in your default web browser. You can access it at `http://localhost:3000`.
-Live project is available at
+Live project is available at https://crypto-price-tracker-0228.netlify.app/
 
 ## What the Project Does
 
