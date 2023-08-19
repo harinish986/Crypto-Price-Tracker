@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Shadows+Into+Light&family=Tilt+Prism&display=swap');
+
+html body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-image: url('./assets/crypto.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(227, 221, 214);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.crypto-app {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 64px;
+  color: rgb(227, 221, 214);
+}
+
+.crypto-btn {
+  background-color: #141777;
   color: white;
+  border-color: whitesmoke;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.crypto-btn:hover {
+  background-color: #458ba0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.crypto-search {
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.crypto-text {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.crypto-input {
+  padding-left: 16px;
+  width: 300px;
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+  color: rgb(12, 12, 70);
+}
+
+.crypto-input::placeholder {
+  color: darkblue;
 }
