@@ -3,9 +3,9 @@ import './CryptoInfo.css';
 
 const Crypto = ({ name, img, symbol, price, volume, btc }) => {
 
-    const roundPrice = Number(price).toFixed(3);
-    const roundVol = Number(volume).toFixed(3);
-    const roundBtc = Number(btc).toFixed(3);
+    const roundPrice = Number(price).toFixed(5);
+    const roundVol = Number(volume).toFixed(5);
+    const roundBtc = Number(btc).toFixed(5);
 
     return (
         <div className='crypto-container'>
