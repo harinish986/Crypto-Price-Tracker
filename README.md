@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Crypto Tracker App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The **Crypto Tracker App** is a React application that allows users to track and display information about various cryptocurrencies. This app retrieves cryptocurrency data from https://api.coinranking.com/v2/coins API and provides features such as sorting by price, searching for specific cryptocurrency, and displaying relevant details.
 
-## Available Scripts
+## Components
 
-In the project directory, you can run:
+### CryptoInfo
 
-### `npm start`
+The `CryptoInfo` component serves as the main component of the app. It fetches cryptocurrency data from https://api.coinranking.com/v2/coins API, displays a search bar for filtering cryptocurrencies by name, and dynamically sorts and renders the cryptocurrency data. Key features and functionality include:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **State Management**: It uses the `useState` hook to manage the state of `cryptocurrency`, `search`, and `ascending` (sorting order) variables.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **API Data Fetching**: The component uses the `useEffect` hook to fetch initial cryptocurrency data from the API using the Axios library. It then sets the fetched data to the `cryptocurrency` state.
 
-### `npm test`
+- **Sorting**: The component has a `handleSort` function that toggles the sorting order (`ascending`) and then calls the `fetchCoins` function to re-fetch and re-sort the cryptocurrency data based on the new sorting order.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Filtering**: The input in the search bar triggers a change in the `search` state, which filters the `cryptocurrency` data based on the entered search query.
 
-### `npm run build`
+- **Rendering**: The `currencyFilter` array (filtered cryptocurrency data) is mapped to the `Crypto` component to display each cryptocurrency's details.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Crypto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The `Crypto` component is responsible for rendering individual cryptocurrency information within the `CryptoInfo` component. It receives props such as `name`, `img`, `symbol`, `price`, `volume`, and `btc` from its parent component. Key features and functionality include:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Props Handling**: The component accepts props such as `name`, `img`, `symbol`, `price`, `volume`, and `btc`.
 
-### `npm run eject`
+- **Number Formatting**: The component uses the `Number.toFixed` method to format `price`, `volume`, and `btc` values to have three decimal places.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Rendering**: It renders each cryptocurrency's details, including its name, icon image, symbol, price, trading volume, and price in Bitcoin (btc).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How It Works
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. When the app is loaded, the `CryptoInfo` component fetches cryptocurrency data from the external API and displays it.
+2. Users can use the search bar to filter cryptocurrencies by name, which triggers the `changeHandler` function to update the `search` state.
+3. Clicking the "Sort Ascending/Descending" button toggles the sorting order (`ascending`) and re-fetches and re-sorts the cryptocurrency data.
+4. The `Crypto` component is responsible for displaying each cryptocurrency's information in a visually organized manner.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## How to Build and Run the Project
 
-## Learn More
+To build and run the Crypto Tracker App locally, follow these steps:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone the repository to your local machine.
+2. Navigate to the project directory in the terminal.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Install Dependencies
 
-### Code Splitting
+Run the following command to install the required dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm install
+```
 
-### Analyzing the Bundle Size
+### Start the Development Server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Run the following command to start the development server:
 
-### Making a Progressive Web App
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This will launch the app in your default web browser. You can access it at `http://localhost:3000`.
+Live project is available at
 
-### Advanced Configuration
+## What the Project Does
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The Crypto Tracker App allows users to:
 
-### Deployment
+- View a list of cryptocurrencies with their names, symbols, prices, trading volumes, and prices in Bitcoin.
+- Search for specific cryptocurrencies by name.
+- Sort the list of cryptocurrencies in either ascending or descending order based on their prices.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In summary, the app provides a user-friendly interface to track and visualize cryptocurrency data, offering filtering and sorting functionalities to enhance the user experience.
