@@ -24,7 +24,7 @@ The `Crypto` component is responsible for rendering individual cryptocurrency in
 
 - **Props Handling**: The component accepts props such as `name`, `img`, `symbol`, `price`, `volume`, and `btc`.
 
-- **Number Formatting**: The component uses the `Number.toFixed` method to format `price`, `volume`, and `btc` values to have three decimal places.
+- **Number Formatting**: The component uses the `Number.toFixed` method to format `price`, `volume`, and `btc` values to have five decimal places.
 
 - **Rendering**: It renders each cryptocurrency's details, including its name, icon image, symbol, price, trading volume, and price in Bitcoin (btc).
 
