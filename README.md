@@ -1,5 +1,3 @@
-Absolutely! Here's a combined `README.md` that includes both the frontend and backend sections:
-
 ````markdown
 # Crypto Tracker App
 
